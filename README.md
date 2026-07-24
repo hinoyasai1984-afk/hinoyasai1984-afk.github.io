@@ -21,6 +21,7 @@ Senya Fujiが個人で作った小さなWebアプリをまとめるトップペ�
 
 | アプリ | リポジトリ |
 |---|---|
+| 今週の地上波/BSアニメ番組表 | [anime-timetable](https://github.com/hinoyasai1984-afk/anime-timetable) |
 | 地名で調べる天気・気候アプリ | [weather-climate-app](https://github.com/hinoyasai1984-afk/weather-climate-app) |
 | 検査・通院タイムライン | [kensa-timeline](https://github.com/hinoyasai1984-afk/kensa-timeline) |
 | 積立投資シミュレーター | [investment-simulator](https://github.com/hinoyasai1984-afk/investment-simulator) |
