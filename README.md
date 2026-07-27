@@ -21,6 +21,7 @@ Senya Fujiが個人で作った小さなWebアプリをまとめるトップペ�
 
 | アプリ | リポジトリ |
 |---|---|
+| 湘南モノレール 時刻表(大船⇔西鎌倉) | [shonan-monorail-timetable](https://github.com/hinoyasai1984-afk/shonan-monorail-timetable) |
 | 今日から6日間の地上波/BSアニメ番組表 | [anime-timetable](https://github.com/hinoyasai1984-afk/anime-timetable) |
 | 地名で調べる天気・気候アプリ | [weather-climate-app](https://github.com/hinoyasai1984-afk/weather-climate-app) |
 | 検査・通院タイムライン | [kensa-timeline](https://github.com/hinoyasai1984-afk/kensa-timeline) |
