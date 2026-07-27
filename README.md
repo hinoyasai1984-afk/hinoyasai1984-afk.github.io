@@ -21,6 +21,7 @@ Senya Fujiが個人で作った小さなWebアプリをまとめるトップペ�
 
 | アプリ | リポジトリ |
 |---|---|
+| 歴史哲学の系譜 ― 読書アプリ | [rekishi-tetsugaku-book](https://github.com/hinoyasai1984-afk/rekishi-tetsugaku-book) |
 | マーケットダッシュボード | [market-dashboard](https://github.com/hinoyasai1984-afk/market-dashboard) |
 | 飲み会割勘アプリ | [warikan-app](https://github.com/hinoyasai1984-afk/warikan-app) |
 | 湘南モノレール 時刻表(大船⇔西鎌倉) | [shonan-monorail-timetable](https://github.com/hinoyasai1984-afk/shonan-monorail-timetable) |
