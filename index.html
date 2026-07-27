@@ -67,7 +67,13 @@ html, body {
 .app-header h1 { font-size: 26px; margin: 0 0 6px; }
 .subtitle { margin: 0; color: var(--text-secondary); font-size: 15px; max-width: 560px; line-height: 1.6; }
 
-.theme-toggle {
+.header-actions {
+  display: flex;
+  gap: 8px;
+  flex: none;
+}
+
+.theme-toggle, .refresh-btn {
   background: var(--surface-1);
   border: 1px solid var(--border);
   border-radius: 8px;
@@ -78,7 +84,12 @@ html, body {
   color: var(--text-primary);
   flex: none;
 }
-.theme-toggle:hover { background: var(--gridline); }
+.theme-toggle:hover, .refresh-btn:hover { background: var(--gridline); }
+.refresh-btn.spinning { animation: refresh-spin 0.7s linear; }
+@keyframes refresh-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
 
 .app-grid {
   margin-top: 32px;
@@ -149,7 +160,10 @@ html, body {
       <h1>Senya Fuji のアプリ集</h1>
       <p class="subtitle">個人で作った小さなツールをまとめたページ。新しく公開したものはここに追加していきます。</p>
     </div>
-    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="配色を切り替え">🌓</button>
+    <div class="header-actions">
+      <button id="refresh-btn" class="refresh-btn" type="button" aria-label="最新版に更新" title="最新版に更新(キャッシュを回避して再取得)">🔄</button>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="配色を切り替え">🌓</button>
+    </div>
   </header>
 
   <div class="app-grid">
@@ -219,6 +233,15 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
   if (current === "dark") root.setAttribute("data-theme", "light");
   else if (current === "light") root.removeAttribute("data-theme");
   else root.setAttribute("data-theme", "dark");
+});
+
+document.getElementById("refresh-btn").addEventListener("click", (e) => {
+  e.currentTarget.classList.add("spinning");
+  // GitHub PagesのCDNキャッシュ(最大10分)を避けるため、毎回異なるクエリを付けて
+  // 必ずオリジンから最新のHTMLを取得し直す
+  const url = new URL(location.href);
+  url.searchParams.set("_refresh", Date.now().toString());
+  location.href = url.toString();
 });
 </script>
 </body>
