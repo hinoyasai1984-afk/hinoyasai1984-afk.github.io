@@ -17,11 +17,14 @@ Senya Fujiが個人で作った小さなWebアプリをまとめるトップペ�
 
 新しいカードは`.app-grid`の先頭に追加し、最新のものが一番上に来るようにする。
 
+**例外: 「読書アプリ」は個別にカードを作らず、[bookshelf](https://github.com/hinoyasai1984-afk/bookshelf)リポジトリの`app.js`内`books`配列に追記する。** 本棚ページ自体へのカードはすでにここにあるので、本を追加してもこのトップページの変更は不要。
+
 ## 現在掲載中のアプリ
 
 | アプリ | リポジトリ |
 |---|---|
-| 歴史哲学の系譜 ― 読書アプリ | [rekishi-tetsugaku-book](https://github.com/hinoyasai1984-afk/rekishi-tetsugaku-book) |
+| 本棚(読書アプリ一覧) | [bookshelf](https://github.com/hinoyasai1984-afk/bookshelf) |
+| ├ 歴史哲学の系譜 ― 読書アプリ | [rekishi-tetsugaku-book](https://github.com/hinoyasai1984-afk/rekishi-tetsugaku-book) |
 | マーケットダッシュボード | [market-dashboard](https://github.com/hinoyasai1984-afk/market-dashboard) |
 | 飲み会割勘アプリ | [warikan-app](https://github.com/hinoyasai1984-afk/warikan-app) |
 | 湘南モノレール 時刻表(大船⇔西鎌倉) | [shonan-monorail-timetable](https://github.com/hinoyasai1984-afk/shonan-monorail-timetable) |
