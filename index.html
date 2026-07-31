@@ -73,7 +73,7 @@ html, body {
   flex: none;
 }
 
-.theme-toggle, .refresh-btn {
+.theme-toggle, .refresh-btn, .share-link-btn {
   background: var(--surface-1);
   border: 1px solid var(--border);
   border-radius: 8px;
@@ -84,7 +84,7 @@ html, body {
   color: var(--text-primary);
   flex: none;
 }
-.theme-toggle:hover, .refresh-btn:hover { background: var(--gridline); }
+.theme-toggle:hover, .refresh-btn:hover, .share-link-btn:hover { background: var(--gridline); }
 .refresh-btn.spinning { animation: refresh-spin 0.7s linear; }
 @keyframes refresh-spin {
   from { transform: rotate(0deg); }
@@ -161,6 +161,7 @@ html, body {
       <p class="subtitle">個人で作った小さなツールをまとめたページ。新しく公開したものはここに追加していきます。</p>
     </div>
     <div class="header-actions">
+      <button id="share-link" class="share-link-btn" type="button" aria-label="このページのリンクをコピー" title="このページのリンクをコピー">🔗</button>
       <button id="refresh-btn" class="refresh-btn" type="button" aria-label="最新版に更新" title="最新版に更新(キャッシュを回避して再取得)">🔄</button>
       <button id="theme-toggle" class="theme-toggle" type="button" aria-label="配色を切り替え">🌓</button>
     </div>
@@ -257,6 +258,32 @@ document.getElementById("refresh-btn").addEventListener("click", (e) => {
   url.searchParams.set("_refresh", Date.now().toString());
   location.href = url.toString();
 });
+
+document.getElementById("share-link").addEventListener("click", (e) => {
+  const btn = e.currentTarget;
+  const url = "https://hinoyasai1984-afk.github.io/";
+  const original = btn.textContent;
+  const onDone = () => {
+    btn.textContent = "✓";
+    setTimeout(() => { btn.textContent = original; }, 1600);
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(url).then(onDone).catch(() => fallbackCopyLink(url, onDone));
+  } else {
+    fallbackCopyLink(url, onDone);
+  }
+});
+function fallbackCopyLink(text, onDone) {
+  const ta = document.createElement("textarea");
+  ta.value = text;
+  ta.style.position = "fixed";
+  ta.style.opacity = "0";
+  document.body.appendChild(ta);
+  ta.select();
+  try { document.execCommand("copy"); } catch (e) { /* clipboard unavailable */ }
+  document.body.removeChild(ta);
+  onDone();
+}
 </script>
 </body>
 </html>
