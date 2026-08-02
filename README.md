@@ -23,6 +23,7 @@ Senya Fujiが個人で作った小さなWebアプリをまとめるトップペ�
 
 | アプリ | リポジトリ |
 |---|---|
+| 房総半島 低山ハイキングプラン | [boso-hiking-app](https://github.com/hinoyasai1984-afk/boso-hiking-app) |
 | 本棚(読書アプリ一覧) | [bookshelf](https://github.com/hinoyasai1984-afk/bookshelf) |
 | ├ 歴史哲学の系譜 ― 読書アプリ | [rekishi-tetsugaku-book](https://github.com/hinoyasai1984-afk/rekishi-tetsugaku-book) |
 | マーケットダッシュボード | [market-dashboard](https://github.com/hinoyasai1984-afk/market-dashboard) |
